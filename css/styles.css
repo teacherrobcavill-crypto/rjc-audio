@@ -1011,10 +1011,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  .nav-container {
+    height: 64px;
+  }
+
+  .logo-img {
+    height: 34px;
+  }
+
+  .nav-actions {
+    gap: 10px;
+  }
+
+  .nav-actions .btn {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    border-radius: 6px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.92rem;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
-    top: 72px;
+    top: 64px;
     left: 0;
     right: 0;
     background: var(--bg-dark);
@@ -1029,6 +1055,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .mobile-menu-btn {
     display: block;
+    padding: 6px;
   }
 
   .hero-badges {
@@ -1048,3 +1075,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 28px 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .nav-actions .btn {
+    padding: 5px 10px;
+    font-size: 0.74rem;
+  }
+
+  .logo-img {
+    height: 28px;
+  }
+}
+
