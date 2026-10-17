@@ -191,6 +191,10 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
 }
 
+.mobile-cta-item {
+  display: none;
+}
+
 .nav-link {
   font-size: 0.92rem;
   font-weight: 500;
@@ -1012,23 +1016,41 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .nav-container {
-    height: 64px;
+    height: 60px;
+    padding: 0 16px;
   }
 
   .logo-img {
-    height: 34px;
+    height: 28px;
+    max-width: 200px;
+    object-fit: contain;
+  }
+
+  /* Completely hide the header button on mobile so it never clashes with the logo */
+  .header-cta-desktop {
+    display: none !important;
   }
 
   .nav-actions {
-    gap: 10px;
+    gap: 0;
   }
 
-  .nav-actions .btn {
-    padding: 6px 12px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    white-space: nowrap;
-    border-radius: 6px;
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
+
+  /* Prominent full-width button inside the mobile drawer */
+  .mobile-cta-item {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
   }
 
   .hero-actions .btn {
@@ -1040,22 +1062,18 @@ h1, h2, h3, h4, h5, h6 {
   .nav-links {
     display: none;
     position: absolute;
-    top: 64px;
+    top: 60px;
     left: 0;
     right: 0;
     background: var(--bg-dark);
     flex-direction: column;
-    padding: 24px;
+    padding: 24px 20px;
     border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   }
 
   .nav-links.open {
     display: flex;
-  }
-
-  .mobile-menu-btn {
-    display: block;
-    padding: 6px;
   }
 
   .hero-badges {
@@ -1077,13 +1095,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
-  .nav-actions .btn {
-    padding: 5px 10px;
-    font-size: 0.74rem;
-  }
-
   .logo-img {
-    height: 28px;
+    height: 24px;
+    max-width: 175px;
   }
 }
+
 
